@@ -1,6 +1,7 @@
 # -AZ-104-Enterprise-Implementation-Portfolio
 *Detailed step-by-step documentation, architecture diagrams, and verification for enterprise Azure administration demos (Entra ID tenants, custom domain configurations, RBAC, and virtual networking).*
 
+az104-enterprise-lab-implementation/
 ├── 01-identities-and-governance/
 │   ├── lab-01-multi-tenant-setup.md
 │   ├── lab-02-users-groups-licensing.md
