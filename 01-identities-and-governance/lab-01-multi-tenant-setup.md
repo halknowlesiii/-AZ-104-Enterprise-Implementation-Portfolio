@@ -53,3 +53,18 @@ To ensure my account has appropriate governance and user management authority ac
 
 ![Assigned Directory Roles](./assets/user-roles.png)
 *Figure 1.5: Microsoft Entra ID active role assignments validating Global Admin and User Admin privileges.*
+
+---
+
+## 🧪 Validation & Operational Results
+- ✅ **Subscription Boundaries:** Verified dual subscription structure (`Prod Sub 1` and `Dev Sub 1`) under the same Entra ID root tenant.
+- ✅ **Logical Container:** Provisioned `Robinhood305-RG` for structured resource lifecycle management.
+- ✅ **Custom Identity Readiness:** Added `robinhood305h3a0l5.com` domain entry in Microsoft Entra ID for upcoming public DNS TXT verification.
+- ✅ **Privilege Verification:** Confirmed active Global Administrator & User Administrator role assignments for identity governance operations.
+
+---
+
+## 🧹 Cleanup & Next Steps
+* **Next Lab:** Configure public DNS records (TXT verification) to transition `robinhood305h3a0l5.com` from **Unverified** to **Available / Verified**, followed by user UPN migration and Group-Based Licensing Policies.
+
+
