@@ -73,17 +73,19 @@ To automate membership lifecycles and eliminate manual administrative overhead, 
 - **Membership Type:** Dynamic User
 - **Role Assignable:** Disabled *(Required to allow dynamic group evaluation)*
 
-![New Security Group Configuration](./assets/new-group-config.png)
+![New Security Group Configuration](./assets/new-group-config.png) 
 
 *Figure 2.5: Microsoft Entra ID Security Group creation configured for Dynamic User evaluation.*
 
-![All Group Creation Success](./assets/group-creation-success.png)
+![All Group Creation Success](./assets/all-group-creation-success.png)
 
 *Figure 2.5b: Active group status and Entra ID creation audit log confirmation for Robinhood305-IT-Staff.*
 
 ---
 
 ### 3. Dynamic Membership Query Definition
+
+![Dynamic Membership Successful Configuration](./assets/dynamic-group-rule.png)
 
 Membership rules were constructed in the rule builder to evaluate user profile attributes upon directory account creation:
 
