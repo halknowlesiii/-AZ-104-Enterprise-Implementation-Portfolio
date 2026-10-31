@@ -77,7 +77,7 @@ To automate membership lifecycles and eliminate manual administrative overhead, 
 
 *Figure 2.5: Microsoft Entra ID Security Group creation configured for Dynamic User evaluation.*
 
-![All Group Creation Success]<img src="assets/all-group-creation-success.png" alt="All Group Creation Success" width="100%" />
+![All Group Creation Success](./assets/group-creation-success.png)
 
 *Figure 2.5b: Active group status and Entra ID creation audit log confirmation for Robinhood305-IT-Staff.*
 
