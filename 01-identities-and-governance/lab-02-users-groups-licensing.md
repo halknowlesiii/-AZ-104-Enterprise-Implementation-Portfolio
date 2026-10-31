@@ -1,51 +1,79 @@
 ## 🚀 LAB 2: Identity Management, Custom Domain Verification, User Provisioning & Dynamic Group Governance
 
-Following the AZ-104 course schedule, **Lab 2** builds directly on the baseline setup from Lab 1 by executing public DNS verification, creating enterprise user identities, and setting up automated group-based licensing.
+# Lab 2: Identity Management, Dynamic Groups & Group-Based Licensing
+
+## 🎯 Executive Summary & Objectives
+- **Goal:** Implement enterprise user identity management, dynamic security group provisioning, and automated group-based licensing within Microsoft Entra ID.
+- **Organization Name:** Robinhood (`Robinhood305.onmicrosoft.com`)
+- **Primary Domain Suffix:** `robinhood305h3a0l5.com`
+- **Key Azure Services Used:** Microsoft Entra ID (Azure AD), Microsoft 365 Admin Center, Dynamic Security Groups, Group-Based Licensing.
 
 ---
 
-### 📋 Step-by-Step Instructions for Lab 2
+## 🏗️ Architecture & Implementation Summary
 
-#### Step 1: Complete Public DNS Verification for `robinhood305h3a0l5.com`
-1. Open [Microsoft Entra Admin Center](https://entra.microsoft.com).
-2. Navigate to **Identity** $\rightarrow$ **Settings** $\rightarrow$ **Domain names**.
-3. Click on **`robinhood305h3a0l5.com`**.
-4. Copied the generated **TXT record details**:
-   * **Host / Alias:** `@`
-   * **Value:** `MS=msXXXXXXXX` (Copied my unique string)
-   * **TTL:** `3600`
-5. Logged into my **DNS Registrar** (Namecheap, Cloudflare, GoDaddy, or Azure DNS) (I chose Cloudflare to save $$$).
-6. Created a new **TXT Record** using the copied values.
-7. Returned to Microsoft Entra Admin Center and click **Verify**.
-8. Once verified, I click **Make primary** to set `robinhood305h3a0l5.com` as the primary tenant UPN suffix.
+### 1. Enterprise User Provisioning
 
----
+Three administrative and technical user identities were established utilizing the verified primary custom domain suffix (`robinhood305h3a0l5.com`):
 
-#### Step 2: Create Operational User Identities
-Create three distinct administrative and technical user accounts using the custom domain suffix:
+| Display Name | User Principal Name (UPN) | Usage Location | Department | Directory Role |
+| :--- | :--- | :--- | :--- | :--- |
+| **Hal Knowles (Admin)** | `halknowles@robinhood305h3a0l5.com` | United States | IT | Global Administrator |
+| **User Admin Tech** | `usr-admin@robinhood305h3a0l5.com` | United States | IT | User Administrator |
+| **Helpdesk Lead** | `helpdesk@robinhood305h3a0l5.com` | United States | Support | Helpdesk Administrator |
 
-| Display Name | User Principal Name (UPN) | Usage Location | Directory Role |
-| :--- | :--- | :--- | :--- |
-| **Hal Knowles (Admin)** | `halknowles@robinhood305h3a0l5.com` | United States | Global Administrator |
-| **User Admin Tech** | `usr-admin@robinhood305h3a0l5.com` | United States | User Administrator |
-| **Helpdesk Tech** | `helpdesk@robinhood305h3a0l5.com` | United States | Helpdesk Administrator |
+#### 👤 Account 1: Hal Knowles (Admin)
+![Hal Knowles Admin Setup](./user-create-admin-1.png)
+*Figure 2.1a: Initial account setup for Global Administrator identity under domain `robinhood305h3a0l5.com`.*
 
-1. Go to **Identity** $\rightarrow$ **Users** $\rightarrow$ **All users** $\rightarrow$ **+ New user** $\rightarrow$ **Create new user**.
-2. Set the domain suffix dropdown to `@robinhood305h3a0l5.com`.
-3. Under **Properties** $\rightarrow$ **Settings**, set **Usage Location** to **United States** *(Required for licensing)*.
-4. Set **Department** to `IT`.
+![Hal Knowles Admin Verification](./user-create-admin-2.png)
+*Figure 2.1b: Configuration properties and Global Administrator directory role validation.*
 
 ---
 
-#### Step 3: Configure Dynamic Security Group & Group-Based Licensing
-1. Navigate to **Identity** $\rightarrow$ **Groups** $\rightarrow$ **All groups** $\rightarrow$ **+ New group**.
-2. **Group type:** Security
-3. **Group name:** `Robinhood305-IT-Staff`
-4. **Membership type:** Dynamic User
-5. Click **Add dynamic query** and construct the rule:
-   ```text
-   (user.department -eq "IT")
+#### 👤 Account 2: User Admin Tech
+![User Admin Tech Setup](./user-create-tech-1.png)
+*Figure 2.2a: Provisioning User Administrator account with custom UPN prefix `usr-admin`.*
+
+![User Admin Tech Verification](./user-create-tech-2.png)
+*Figure 2.2b: Configuration properties and User Administrator directory role validation.*
+
 ---
+
+#### 👤 Account 3: Helpdesk Lead
+![Helpdesk Lead Setup](./user-create-helpdesk-1.png)
+*Figure 2.3a: Provisioning Helpdesk Administrator account with UPN prefix `helpdesk`.*
+
+![Helpdesk Lead Verification](./user-create-helpdesk-2.png)
+*Figure 2.3b: Configuration properties and Helpdesk Administrator directory role validation.*
+
+---
+
+#### 📋 Complete User Directory Verification
+![All Users Directory](./user-list.png)
+*Figure 2.4: Microsoft Entra ID active users directory confirming creation of custom domain user identities.*
+
+---
+
+### 2. Dynamic Security Group Configuration
+
+To automate membership lifecycles and eliminate manual administrative overhead, a dynamic security group named **`Robinhood305-IT-Staff`** was provisioned:
+
+- **Group Type:** Security
+- **Membership Type:** Dynamic User
+- **Role Assignable:** Disabled *(Required to allow dynamic group evaluation)*
+
+![New Security Group Configuration](./new-group-config.png)
+*Figure 2.5: Microsoft Entra ID Security Group creation configured for Dynamic User evaluation.*
+
+---
+
+### 3. Dynamic Membership Query Definition
+
+Membership rules were constructed in the rule builder to evaluate user profile attributes upon directory account creation:
+
+```text
+(user.department -eq "IT")
 
 ## 🚀 Next Up | Lab 3 Agenda: Enterprise Azure RBAC & Custom Role Definitions
 
