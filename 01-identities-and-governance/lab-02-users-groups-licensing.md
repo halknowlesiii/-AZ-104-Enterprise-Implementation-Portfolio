@@ -1,5 +1,5 @@
 ## 🚀 LAB 2: Identity Management, Custom Domain Verification, User Provisioning & Dynamic Group Governance
-# Lab 2: Identity Management, Dynamic Groups & Group-Based Licensing
+ Identity Management, Dynamic Groups & Group-Based Licensing
 
 ## 🎯 Executive Summary & Objectives
 - **Goal:** Implement enterprise user identity management, dynamic security group provisioning, and automated group-based licensing within Microsoft Entra ID.
