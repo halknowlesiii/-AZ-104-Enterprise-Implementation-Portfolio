@@ -68,7 +68,7 @@ To automate membership lifecycles and eliminate manual administrative overhead, 
 [![New Security Group Configuration](./assets/new-group-config.png)](./assets/new-group-config.png)
 *Figure 2.5: Microsoft Entra ID Security Group creation configured for Dynamic User evaluation.*
 
-[![New Security Group Validation](./assets/all-group-creation-success.png)]
+[![New Security Group Validation](./assets/all-group-creation-success.png)](./assets/all-group-creation-success.png)
 
 ---
 
@@ -86,13 +86,4 @@ With tenant-level identities active, **Lab 3** transitions to resource-level acc
 - 🔹 **Built-in Role Delegation:** Assigning targeted `Contributor` access over resource groups under least-privilege principles.
 - 🔹 **Custom JSON Role Creation:** Deploying a custom `Virtual Machine Operator` role to allow starting/stopping VMs without full management access.
 - 🔹 **Scope Inheritance Verification:** Validating permission inheritance across Management Group $\rightarrow$ Subscription $\rightarrow$ Resource Group $\rightarrow$ Resource levels.
-- 🔹 **Access Control Testing:** Verifying that unauthorized resource creation attempts are explicitly denied by Azure IAM policies.
-
-## 🚀 Next Up | Lab 3 Agenda: Enterprise Azure RBAC & Custom Role Definitions
-
-With tenant-level identities active, **Lab 3** transitions to resource-level access governance using **Azure Role-Based Access Control (RBAC)**:
-
-- 🔹 **Built-in Role Delegation:** Assigning targeted `Contributor` access over resource groups under least-privilege principles.
-- 🔹 **Custom JSON Role Creation:** Deploying a custom `Virtual Machine Operator` role to allow starting/stopping VMs without full management access.
-- 🔹 **Scope Inheritance Verification:** Validating permission inheritance across Subscription $\rightarrow$ Resource Group $\rightarrow$ Resource levels.
 - 🔹 **Access Control Testing:** Verifying that unauthorized resource creation attempts are explicitly denied by Azure IAM policies.
