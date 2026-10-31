@@ -65,10 +65,8 @@ To automate membership lifecycles and eliminate manual administrative overhead, 
 - **Membership Type:** Dynamic User
 - **Role Assignable:** Disabled *(Required to allow dynamic group evaluation)*
 
-[![New Security Group Configuration](./assets/new-group-config.png)](./assets/new-group-config.png)
+[![New Security Group Configuration](./assets/new-group-config.png)]((./assets/all-group-creation-success.png))
 *Figure 2.5: Microsoft Entra ID Security Group creation configured for Dynamic User evaluation.*
-
-[![New Security Group Validation](./assets/new-group-config.png)](./assets/new-group-config.png)
 
 ---
 
