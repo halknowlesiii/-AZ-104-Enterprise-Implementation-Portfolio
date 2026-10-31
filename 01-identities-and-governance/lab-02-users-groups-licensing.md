@@ -1,6 +1,6 @@
 ## 🚀 LAB 2: Identity Management, Custom Domain Verification, User Provisioning & Dynamic Group Governance
 
-#  # Lab 2: Identity Management, Dynamic Groups & Group-Based Licensing
+# Identity Management, Dynamic Groups & Group-Based Licensing
 
 ## 🎯 Executive Summary & Objectives
 - **Goal:** Implement enterprise user identity management, dynamic security group provisioning, and automated group-based licensing within Microsoft Entra ID.
@@ -77,7 +77,6 @@ Membership rules were constructed in the rule builder to evaluate user profile a
 
 ```text
 (user.department -eq "IT")
-
 ## 🚀 Next Up | Lab 3 Agenda: Enterprise Azure RBAC & Custom Role Definitions
 
 With tenant-level identities active, **Lab 3** transitions to resource-level access governance using **Azure Role-Based Access Control (RBAC)**:
