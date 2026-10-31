@@ -22,35 +22,35 @@ Three administrative and technical user identities were established utilizing th
 | **Helpdesk Lead** | `helpdesk@robinhood305h3a0l5.com` | United States | Support | Helpdesk Administrator |
 
 #### 👤 Account 1: Hal Knowles (Admin)
-[![Hal Knowles Admin Setup](./user-create-admin-1.png)](./user-create-admin-1.png)
-*Figure 2.1a: Initial account setup for Global Administrator identity under domain robinhood305h3a0l5.com.*
+[![Hal Knowles Admin Setup](./assets/user-create-admin-1.png)](./assets/user-create-admin-1.png)
+*Figure 2.1a: Initial account setup for Global Administrator identity under domain `robinhood305h3a0l5.com`.*
 
-[![Hal Knowles Admin Verification](./user-create-admin-2.png)](./user-create-admin-2.png)
+[![Hal Knowles Admin Verification](./assets/user-create-admin-2.png)](./assets/user-create-admin-2.png)
 *Figure 2.1b: Configuration properties and Global Administrator directory role validation.*
 
 ---
 
 #### 👤 Account 2: User Admin Tech
-[![User Admin Tech Setup](./user-create-tech-1.png)](./user-create-tech-1.png)
-*Figure 2.2a: Provisioning User Administrator account with custom UPN prefix usr-admin.*
+[![User Admin Tech Setup](./assets/user-create-tech-1.png)](./assets/user-create-tech-1.png)
+*Figure 2.2a: Provisioning User Administrator account with custom UPN prefix `usr-admin`.*
 
-[![User Admin Tech Verification](./user-create-tech-2.png)](./user-create-tech-2.png)
+[![User Admin Tech Verification](./assets/user-create-tech-2.png)](./assets/user-create-tech-2.png)
 *Figure 2.2b: Configuration properties and User Administrator directory role validation.*
 
 ---
 
 #### 👤 Account 3: Helpdesk Lead
-[![Helpdesk Lead Setup](./user-create-helpdesk-1.png)](./user-create-helpdesk-1.png)
-*Figure 2.3a: Provisioning Helpdesk Administrator account with UPN prefix helpdesk.*
+[![Helpdesk Lead Setup](./assets/user-create-helpdesk-1.png)](./assets/user-create-helpdesk-1.png)
+*Figure 2.3a: Provisioning Helpdesk Administrator account with UPN prefix `helpdesk`.*
 
-[![Helpdesk Lead Verification](./user-create-helpdesk-2.png)](./user-create-helpdesk-2.png)
+[![Helpdesk Lead Verification](./assets/user-create-helpdesk-2.png)](./assets/user-create-helpdesk-2.png)
 *Figure 2.3b: Configuration properties and Helpdesk Administrator directory role validation.*
 
 ---
 
 #### 📋 Directory Provisioning Audit Logs & User List
 [![User Creation Notifications](./assets/user-creation-notifications.png)](./assets/user-creation-notifications.png)
-*Figure 2.4a: Real-time Entra ID notification panel confirming successful provisioning sequence.*
+*Figure 2.4a: Real-time Entra ID notification panel confirming successful provisioning sequence for all three administrative identities.*
 
 [![All Users Directory](./assets/user-list.png)](./assets/user-list.png)
 *Figure 2.4b: Microsoft Entra ID active users directory confirming creation of custom domain user identities.*
@@ -65,15 +65,17 @@ To automate membership lifecycles and eliminate manual administrative overhead, 
 - **Membership Type:** Dynamic User
 - **Role Assignable:** Disabled *(Required to allow dynamic group evaluation)*
 
-[![New Security Group Configuration](./new-group-config.png)](./new-group-config.png)
+[![New Security Group Configuration](./assets/new-group-config.png)](./assets/new-group-config.png)
 *Figure 2.5: Microsoft Entra ID Security Group creation configured for Dynamic User evaluation.*
+
+[![New Security Group Validation](./assets/all-group-creation-success.png)]
 
 ---
 
 ### 3. Dynamic Membership Query Definition
 
+[![Dynamic Membership Configuration](./assets/dynamic-group-rule.png)]
 Membership rules were constructed in the rule builder to evaluate user profile attributes upon directory account creation:
-
 ```text
 (user.department -eq "IT")
 
