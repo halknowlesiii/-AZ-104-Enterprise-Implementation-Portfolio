@@ -1,5 +1,4 @@
 ## 🚀 LAB 2: Identity Management, Custom Domain Verification, User Provisioning & Dynamic Group Governance
-
 # Lab 2: Identity Management, Dynamic Groups & Group-Based Licensing
 
 ## 🎯 Executive Summary & Objectives
@@ -22,74 +21,61 @@ Three administrative and technical user identities were established utilizing th
 | **User Admin Tech** | `usr-admin@robinhood305h3a0l5.com` | United States | IT | User Administrator |
 | **Helpdesk Lead** | `helpdesk@robinhood305h3a0l5.com` | United States | Support | Helpdesk Administrator |
 
----
+#### 👤 Account 1: Hal Knowles (Admin)
+[![Hal Knowles Admin Setup](./user-create-admin-1.png)](./user-create-admin-1.png)
+*Figure 2.1a: Initial account setup for Global Administrator identity under domain robinhood305h3a0l5.com.*
 
-### 📷 User Provisioning Screenshots (Screenshots 1 - 8)
-
-#### 1. Hal Knowles Admin Setup
-[![Hal Knowles Admin Setup](./assets/user-create-admin-1.png)](./assets/user-create-admin-1.png)
-*Figure 2.1a: Initial account setup for Global Administrator identity under domain robinhood305h3a0l5.com (Screenshot 1).*
-
-#### 2. Hal Knowles Admin Verification
-[![Hal Knowles Admin Verification](./assets/user-create-admin-2.png)](./assets/user-create-admin-2.png)
-*Figure 2.1b: Configuration properties and Global Administrator directory role validation (Screenshot 2).*
+[![Hal Knowles Admin Verification](./user-create-admin-2.png)](./user-create-admin-2.png)
+*Figure 2.1b: Configuration properties and Global Administrator directory role validation.*
 
 ---
 
-#### 3. User Admin Tech Setup
-[![User Admin Tech Setup](./assets/user-create-tech-1.png)](./assets/user-create-tech-1.png)
-*Figure 2.2a: Provisioning User Administrator account with custom UPN prefix usr-admin (Screenshot 3).*
+#### 👤 Account 2: User Admin Tech
+[![User Admin Tech Setup](./user-create-tech-1.png)](./user-create-tech-1.png)
+*Figure 2.2a: Provisioning User Administrator account with custom UPN prefix usr-admin.*
 
-#### 4. User Admin Tech Verification
-[![User Admin Tech Verification](./assets/user-create-tech-2.png)](./assets/user-create-tech-2.png)
-*Figure 2.2b: Configuration properties and User Administrator directory role validation (Screenshot 4).*
-
----
-
-#### 5. Helpdesk Lead Setup
-[![Helpdesk Lead Setup](./assets/user-create-helpdesk-1.png)](./assets/user-create-helpdesk-1.png)
-*Figure 2.3a: Provisioning Helpdesk Administrator account with UPN prefix helpdesk (Screenshot 5).*
-
-#### 6. Helpdesk Lead Verification
-[![Helpdesk Lead Verification](./assets/user-create-helpdesk-2.png)](./assets/user-create-helpdesk-2.png)
-*Figure 2.3b: Configuration properties and Helpdesk Administrator directory role validation (Screenshot 6).*
+[![User Admin Tech Verification](./user-create-tech-2.png)](./user-create-tech-2.png)
+*Figure 2.2b: Configuration properties and User Administrator directory role validation.*
 
 ---
 
-#### 7. User Creation Notifications
+#### 👤 Account 3: Helpdesk Lead
+[![Helpdesk Lead Setup](./user-create-helpdesk-1.png)](./user-create-helpdesk-1.png)
+*Figure 2.3a: Provisioning Helpdesk Administrator account with UPN prefix helpdesk.*
+
+[![Helpdesk Lead Verification](./user-create-helpdesk-2.png)](./user-create-helpdesk-2.png)
+*Figure 2.3b: Configuration properties and Helpdesk Administrator directory role validation.*
+
+---
+
+#### 📋 Directory Provisioning Audit Logs & User List
 [![User Creation Notifications](./assets/user-creation-notifications.png)](./assets/user-creation-notifications.png)
-*Figure 2.4a: Real-time Entra ID notification panel confirming successful provisioning sequence (Screenshot 7).*
+*Figure 2.4a: Real-time Entra ID notification panel confirming successful provisioning sequence.*
 
-#### 8. All Users Directory List
 [![All Users Directory](./assets/user-list.png)](./assets/user-list.png)
-*Figure 2.4b: Microsoft Entra ID active users directory confirming creation of custom domain user identities (Screenshot 8).*
+*Figure 2.4b: Microsoft Entra ID active users directory confirming creation of custom domain user identities.*
 
 ---
 
-### 📷 Dynamic Security Group Screenshots (Screenshots 9 - 11)
+### 2. Dynamic Security Group Configuration
 
-#### 9. New Security Group Configuration
-[![New Security Group Configuration](./assets/new-group-config.png)](./assets/new-group-config.png)
-*Figure 2.5: Microsoft Entra ID Security Group creation configured for Dynamic User evaluation (Screenshot 9).*
+To automate membership lifecycles and eliminate manual administrative overhead, a dynamic security group named **`Robinhood305-IT-Staff`** was provisioned:
 
-#### 10. Dynamic Membership Rule Query Syntax
-[![Dynamic Membership Rule Query](./assets/dynamic-group-rule.png)](./assets/dynamic-group-rule.png)
-*Figure 2.6: Configuration of dynamic membership query syntax `(user.department -eq "IT")` in Entra portal (Screenshot 10).*
+- **Group Type:** Security
+- **Membership Type:** Dynamic User
+- **Role Assignable:** Disabled *(Required to allow dynamic group evaluation)*
 
-#### 11. All Group Creation Success Status
-[![All Group Creation Success](./assets/all-group-creation-success.png)](./assets/all-group-creation-success.png)
-*Figure 2.7: Confirmation panel and active security group in the Groups directory table (Screenshot 11).*
+[![New Security Group Configuration](./new-group-config.png)](./new-group-config.png)
+*Figure 2.5: Microsoft Entra ID Security Group creation configured for Dynamic User evaluation.*
 
 ---
 
-## 🧪 Validation & Operational Results
+### 3. Dynamic Membership Query Definition
 
-- ✅ **Domain Suffix Verification:** Confirmed accounts (`halknowles`, `usr-admin`, `helpdesk`) properly generated under `robinhood305h3a0l5.com`.
-- ✅ **Dynamic Query Syntax:** Confirmed dynamic rule expression `(user.department -eq "IT")` passed validation in Entra Admin Center.
-- ✅ **Administrative RBAC:** Verified directory role assignments (`Global Administrator`, `User Administrator`, `Helpdesk Administrator`).
-- ✅ **Group Provisioning Audit:** Confirmed `Robinhood305-IT-Staff` security group creation logged and active in the group directory.
+Membership rules were constructed in the rule builder to evaluate user profile attributes upon directory account creation:
 
----
+```text
+(user.department -eq "IT")
 
 ## 🚀 Next Up | Lab 3 Agenda: Enterprise Azure RBAC & Custom Role Definitions
 
