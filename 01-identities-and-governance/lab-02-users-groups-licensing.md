@@ -1,6 +1,6 @@
 ## 🚀 LAB 2: Identity Management, Custom Domain Verification, User Provisioning & Dynamic Group Governance
 
-#: Identity Management, Dynamic Groups & Group-Based Licensing
+#: # Lab 2: Identity Management, Dynamic Groups & Group-Based Licensing
 
 ## 🎯 Executive Summary & Objectives
 - **Goal:** Implement enterprise user identity management, dynamic security group provisioning, and automated group-based licensing within Microsoft Entra ID.
@@ -45,12 +45,12 @@ Three administrative and technical user identities were established utilizing th
 *Figure 2.3a: Provisioning Helpdesk Administrator account with UPN prefix `helpdesk`.*
 
 ![Helpdesk Lead Verification](./user-create-helpdesk-2.png)
-*Figure 2.3b: Configuration properties and Helpdesk Administrator role validation.*
+*Figure 2.3b: Configuration properties and Helpdesk Administrator directory role validation.*
 
 ---
 
 #### 📋 Directory Provisioning Audit Logs & User List
-![User Creation Notifications](./user-creation-notifications.png)
+![User Creation Notifications](./assets/user-creation-notifications.png)
 *Figure 2.4a: Real-time Entra ID notification panel confirming successful provisioning sequence for all three administrative identities.*
 
 ![All Users Directory](./user-list.png)
